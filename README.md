@@ -36,17 +36,17 @@ Real-world noises can be extracted from the environment. There are many types of
 
 Signal to noise ratio, Additive white Gaussian noise(AWGN) and real-world noise(RWN) equations:
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/SNR1.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/SNR1.png)
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/AWGN1.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/AWGN1.png)
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/AWGN2.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/AWGN2.png)
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/AWGN3.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/AWGN3.png)
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/AWGN4.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/AWGN4.png)
 
-![alt text](https://github.com/Varuzhan97/Clean-And-Noisy-Datasets-Generation-Tool-for-DeepSpeech-STT-Engine-Based-on-Google-Translate-API/blob/main/Images/RWN1.png)
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/RWN1.png)
 
 [To get more information about noises read this article.](https://medium.com/analytics-vidhya/adding-noise-to-audio-clips-5d8cee24ccb8)
 ### Environment and Requirements

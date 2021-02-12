@@ -1,4 +1,5 @@
 # Clean And Noisy Datasets Generation Tool for DeepSpeech STT Engine Based on Google Translate's API
+### Description
 The tool can generate both clean and noisy(additive white Gaussian noise(AWGN) and real-world noise(RWN)) datasets for DeepSpeech speech-to-text engine using Google Translate's text-to-speech API feature that can convert text to normal and slow speech. 
 [DeepSpeech](https://github.com/mozilla/DeepSpeech) is a speech-to-text engine based on [Baidu's Deep Speech research paper](https://arxiv.org/abs/1412.5567). Project DeepSpeech uses datasets provided by Mozilla's other project calling Common Voice.
 
@@ -32,7 +33,7 @@ Adding noise to a neural network during training can improve the robustness of t
 
 Additive white Gaussian noise(AWGN) is a basic noise model used in information theory to mimic the effect of many random processes that occur in nature. Additive white Gaussian noise is easier to model for analytical analyzes and it's easier to generate. But it may not represent realistic noise.
 
-Real-world noises can be extracted from the environment. There are many types of real-world noises. For example: arctic wind noise, radio or tv static noise, etc. For adding real-world noise can be used another audio clip which contains real-world noise. It must just be removed from audio clip and add to target clip.
+Real-world noises can be extracted from the environment. There are many types of real-world noises. For example: arctic wind noise, radio or tv static noise, etc. For adding real-world noise can be used another audio clip which contains real-world noise. It must just be extracted from audio clip and add to target clip.
 
 Signal to noise ratio, Additive white Gaussian noise(AWGN) and real-world noise(RWN) equations:
 

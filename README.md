@@ -48,7 +48,7 @@ Signal to noise ratio, Additive white Gaussian noise(AWGN) and real-world noise(
 
 ![alt text](https://github.com/Varuzhan97/Dataset-Generation-for-DeepSpeech-Speech-To-Text-Engine/blob/main/Images/RWN1.png)
 
-[To get more information about noises read this article.](https://medium.com/analytics-vidhya/adding-noise-to-audio-clips-5d8cee24ccb8)
+[To get more information about additive white Gaussian and real-world noises read this article.](https://medium.com/analytics-vidhya/adding-noise-to-audio-clips-5d8cee24ccb8)
 ### Environment and Requirements
 
 Python version: 3.6.12.

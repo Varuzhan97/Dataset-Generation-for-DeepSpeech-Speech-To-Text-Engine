@@ -25,8 +25,8 @@ The .csv files have the following fields:
 Each dataset corpus additionally contains validated.csv file. Audio files(clips) that are included in the training, development, and testing sets must be included in validated.csv file too. The clips division ratio is 80-10-10.
 
 Supported Languages are:
-- [x] English(en)
-- [x] Russian(ru)
+  - [x] English(en)
+  - [x] Russian(ru)
 
 Adding noise to a neural network during training can improve the robustness of the network, evaluate the performance of machine learning models under these noisy conditions, resulting in better generalization and faster learning. Besides this, it is a common approach to combine clean and noisy data. First, pre-train a network using the large noisy dataset and then fine-tune with the clean dataset.
 

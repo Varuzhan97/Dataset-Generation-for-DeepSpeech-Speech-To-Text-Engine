@@ -1,0 +1,4 @@
+Language: 'en' # 'en' -> ISO-639-1 Code Of English Language / 'ru' -> ISO-639-1 Code Of Russian Language.
+Batch Size: 5 # An Argument For Files Batch Size To Be Processed Between Sleeps. Must Be Positive Integer.
+Sleep Time: 20 # An Argument For Sleep (In Seconds) After Batch Processing. Must Be Positive Integer.
+SNR: 10 # An Argument For Signal to Noise Ratio.

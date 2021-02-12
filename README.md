@@ -23,7 +23,16 @@ The .csv files have the following fields:
   * transcript - transcription target for the sample.
 
 Each dataset corpus additionally contains validated.csv file. Audio files(clips) that are included in the training, development, and testing sets must be included in validated.csv file too. The clips division ratio is 80-10-10.
-Supported Languages are English and Russian. 
+
+Supported Languages are:
+- [x] English(en)
+- [x] Russian(ru)
+
+Adding noise to a neural network during training can improve the robustness of the network, evaluate the performance of machine learning models under these noisy conditions, resulting in better generalization and faster learning. Besides this, it is a common approach to combine clean and noisy data. First, pre-train a network using the large noisy dataset and then fine-tune with the clean dataset.
+
+Additive white Gaussian noise(AWGN) is a basic noise model used in information theory to mimic the effect of many random processes that occur in nature. Additive white Gaussian noise is easier to model for analytical analyzes and it's easier to generate. But it may not represent realistic noise.
+
+Real-world noises can be extracted from the environment. There are many types of real-world noises. For example: arctic wind noise, radio or tv static noise, etc. For adding real-world noise can be used another audio clip which contains real-world noise. It must just be removed from audio clip and add to target clip.
 
 Signal to noise ratio, Additive white Gaussian noise(AWGN) and real-world noise(RWN) equations:
 

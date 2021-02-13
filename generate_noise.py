@@ -40,13 +40,13 @@ def generate_noisy_db(csv_data, snr, output_path):
         wav_path = os.path.join(output_path, wav_name[0])
         print('Processing Item: %d/%d, Type: Additive White Gaussian Noise (AWGN).' % (index+1, len(csv_data)))
         signal, sr = librosa.load(wav_path)
-        signal=np.interp(signal, (signal.min(), signal.max()), (-1, 1))
+        signal=np.interp(signal, (signal.min(), signal.max()), (-2147483648, 2147483647))
         noise=get_white_noise(signal,snr)
         X=np.fft.rfft(noise)
         radius,angle=to_polar(X)
         signal_noise=signal+noise
         output_file_path = os.path.join(awgn_output_folder, os.path.basename(wav_path)[:-4] + '-AWGN-' + str(snr) + '-dB-Noisy-' + str(index) + '.wav')
-        write(output_file_path,16000,signal_noise.astype(np.int16))
+        write(output_file_path,16000,signal_noise.astype(np.int32))
         file_size = os.path.getsize(output_file_path)
         awgn_csv_data.append([os.path.basename(output_file_path), str(file_size), wav_name[2]])
         index+=1
@@ -58,15 +58,15 @@ def generate_noisy_db(csv_data, snr, output_path):
         for noisy_wav in noisy_wav_files:
             print('Processing Item: %d/%d, Type: %s.' % ((index/len(noisy_wav_files))+1, len(csv_data), os.path.basename(noisy_wav[:-4])))
             signal, sr = librosa.load(wav_path)
-            signal=np.interp(signal, (signal.min(), signal.max()), (-1, 1))
+            signal=np.interp(signal, (signal.min(), signal.max()), (-2147483648, 2147483647))
             noise, sr = librosa.load(noisy_wav)
-            noise=np.interp(noise, (noise.min(), noise.max()), (-1, 1))
+            noise=np.interp(noise, (noise.min(), noise.max()), (-2147483648, 2147483647))
             if(len(noise)>len(signal)):
                 noise=noise[0:len(signal)]
             noise=get_noise_from_sound(signal,noise,snr)
             signal_noise=signal+noise
             output_file_path = os.path.join(rwn_output_folder, os.path.basename(wav_path)[:-4] + '-RWN-' + os.path.basename(noisy_wav[:-4]) + '-' + str(snr) + '-dB-Noisy-' + str(index) + '.wav')
-            write(output_file_path,16000,signal_noise.astype(np.int16))
+            write(output_file_path,16000,signal_noise.astype(np.int32))
             file_size = os.path.getsize(output_file_path)
             rwn_csv_data.append([os.path.basename(output_file_path), str(file_size), wav_name[2]])
             index+=1

@@ -1,7 +1,10 @@
 # Clean And Noisy Datasets Generation Tool for DeepSpeech STT Engine Based on Google Translate's API
+[Paper of this repository.](http://jsaer.com/download/vol-8-iss-2-2021/JSAER2021-8-2-23-25.pdf)
 ### Description
 The tool can generate both clean and noisy(additive white Gaussian noise(AWGN) and real-world noise(RWN)) datasets for DeepSpeech speech-to-text engine using Google Translate's text-to-speech API feature that can convert text to normal and slow speech. 
 [DeepSpeech](https://github.com/mozilla/DeepSpeech) is a speech-to-text engine based on [Baidu's Deep Speech research paper](https://arxiv.org/abs/1412.5567). Project DeepSpeech uses datasets provided by Mozilla's other project calling Common Voice.
+
+![alt text](https://github.com/Varuzhan97/Dataset-Generation-Tool-For-Language-Identification-Systems/blob/master/Image/structure.png)
 
 Audio clips specifications: 
   * Audio file format is .wav.

@@ -5,13 +5,24 @@ import utils
 from gtts import gTTS
 from datetime import datetime
 
-def g_tts(transcript, language, output_folder, index):
+def g_tts(transcript, language, output_folder, index, generate_male):
     tts = gTTS(text=transcript, lang=language)
     tts_slow = gTTS(text=transcript, lang=language, slow=True)
     file = os.path.join(output_folder, 'gTTS-' + language + '-' + str(index) + '.mp3')
     file_slow = os.path.join(output_folder, 'gTTS-' + language + '-' + str(index) + '-slow.mp3')
     tts.save(file)
     tts_slow.save(file_slow)
+    # If the index is even then generate male voice
+    # In this case 50% of dataset will be male voice, 50% female voice
+    if (generate_male) and ((index % 2) == 0):
+        male_file = os.path.join(output_folder, 'temp.mp3')
+        wait = os.system('ffmpeg -i ' + file + ' -af asetrate=24000*0.75,aresample=24000,atempo=0.75/1 ' + male_file)
+        os.remove(file)
+        os.rename(male_file, file)
+        male_file_slow = os.path.join(output_folder, 'temp_slow.mp3')
+        wait = os.system('ffmpeg -i ' + file_slow + ' -af asetrate=24000*0.75,aresample=24000,atempo=0.75/1 ' + male_file_slow)
+        os.remove(file_slow)
+        os.rename(male_file_slow, file_slow)
     return file, file_slow
 
 def generate_clean_db(language, batch_size, sleep_time, parameters):
@@ -54,7 +65,7 @@ def generate_clean_db(language, batch_size, sleep_time, parameters):
     print('Dataset Path: %s.' % os.path.split(clips_output_path)[0])
     for line in lines[index:]:
         pair = []
-        current_file, current_file_slow = g_tts(line, language, clips_output_path, index)
+        current_file, current_file_slow = g_tts(line, language, clips_output_path, index, parameters.generate_male)
         current_file_size = os.path.getsize(current_file)
         current_file_size_slow = os.path.getsize(current_file_slow)
         print('Processing Item: %d/%d, Type: Normal.' % (index+1, len(lines)))

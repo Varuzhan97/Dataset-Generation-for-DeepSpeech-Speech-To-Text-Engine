@@ -26,6 +26,9 @@ The .csv files have the following fields:
 
 Each dataset corpus additionally contains validated.csv file. Audio files(clips) that are included in the training, development, and testing sets must be included in validated.csv file too. The clips division ratio is 80-10-10.
 
+For many languages, Google Translate's text-to-speech API generates only a female voice.
+For generating a male voice please set the --generate_male argument to True. After this, the database will be consist of 50% male 50% female voices.
+
 Supported Languages are:
   - [x] English(en)
   - [x] Russian(ru)
@@ -61,29 +64,25 @@ Install the required dependencies using pip3:
 > sudo apt install ffmpeg
 ### Repository Structure:
 * /Data
-
   Contains normalized text files that need to be processed.
-  
   Text Normalization rules are:
     * Numbers, dates, acronyms, and abbreviations are non-standard "words" that need to be pronounced differently depending on the context. For example, "$200"           would be pronounced as "two hundred dollars" in English. 
     * The text need to be normalized by removing non-alphanumeric characters, diacritical marks and regular expressions.
     * The text need to be normalized by converting multiple whitespace characters to a single whitespace character.
     * The text need to be normalized by removing punctuation marks except apostrophe(').
     * The text need to be normalized by containing one sentence in each line.
-    
     The system will automatically convert upper case to lower case before processing.
 * /Noise Types
-
   Contains .wav audio files with real-world noises. Real-world noises must just be extracted from an audio clip and add to each audio clip of the database.
+* /Images
+  Contains signal to noise ratio, additive white Gaussian noise(AWGN) and real-world noise(RWN) equations images.
 ### Run
 Input arguments are:
   * --checkpoint_path - an argument for the continuing of a broken process. Must be the absolute path of the folder that contains checkpoint files.
   * --input_path - an argument for absolute path of input text file or folder.
   * --output_path - an argument for absolute path of output.
   * --generate_noisy - an argument for generating noisy dataset(additive white Gaussian noise(AWGN) and real-world noise(RWN)).
-* /Images
-
-  Contains signal to noise ratio, additive white Gaussian noise(AWGN) and real-world noise(RWN) equations images.
+  * --generate_male - an Argument for generating 50% of the database using male voice. Must Be True or False. Default is false.
   
 First time run example:
 > python3 main.py --input_path /path/to/file/or/folder --output_path /path/to/output/folder

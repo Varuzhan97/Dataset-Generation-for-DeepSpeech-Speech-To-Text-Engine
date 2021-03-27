@@ -16,6 +16,8 @@ def parse_args():
                         help='An Argument For Absolute Path Of Output.')
     parser.add_argument('--generate_noisy', default = True,
                         help='An Argument For Generating Noisy Dataset (Additive White Gaussian Noise (AWGN) and Real World Noise (RWN)).')
+    parser.add_argument('--generate_male', default = False,
+                        help='An Argument For The Continuing Of A Broken Process. Must Be The Absolute Path Of The Folder That Contains Checkpoint Files.')
     args = parser.parse_args()
     if args.checkpoint_path is not None:
         if((args.input_path is not None) or (args.output_path is not None)):

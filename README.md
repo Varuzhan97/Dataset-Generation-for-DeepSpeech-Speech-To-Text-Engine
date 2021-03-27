@@ -64,6 +64,7 @@ Install the required dependencies using pip3:
 > sudo apt install ffmpeg
 ### Repository Structure:
 * /Data
+
   Contains normalized text files that need to be processed.
   Text Normalization rules are:
     * Numbers, dates, acronyms, and abbreviations are non-standard "words" that need to be pronounced differently depending on the context. For example, "$200"           would be pronounced as "two hundred dollars" in English. 
@@ -73,8 +74,10 @@ Install the required dependencies using pip3:
     * The text need to be normalized by containing one sentence in each line.
     The system will automatically convert upper case to lower case before processing.
 * /Noise Types
+
   Contains .wav audio files with real-world noises. Real-world noises must just be extracted from an audio clip and add to each audio clip of the database.
 * /Images
+
   Contains signal to noise ratio, additive white Gaussian noise(AWGN) and real-world noise(RWN) equations images.
 ### Run
 Input arguments are:
